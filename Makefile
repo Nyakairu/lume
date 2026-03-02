@@ -4,40 +4,40 @@ BINARY_NAME=lume
 BUILD_DIR=.
 CMD_PATH=./cmd/lume/...
 
-# 默认构建目标
+# Default build target
 all: build
 
-# 构建项目
+# Build the project
 build:
 	@echo "Building $(BINARY_NAME)..."
 	go build -o $(BUILD_DIR)/$(BINARY_NAME) $(CMD_PATH)
 	@echo "Build complete: $(BUILD_DIR)/$(BINARY_NAME)"
 
-# 运行项目
+# Run the project
 run:
 	go run $(CMD_PATH)
 
-# 清理构建产物
+# Clean build artifacts
 clean:
 	@echo "Cleaning..."
 	rm -f $(BUILD_DIR)/$(BINARY_NAME)
 	@echo "Clean complete"
 
-# 运行测试
+# Run tests
 test:
 	go test -v ./...
 
-# 安装依赖
+# Install dependencies
 deps:
 	go mod tidy
 
-# 安装到系统
+# Install to system
 install: build
 	@echo "Installing $(BINARY_NAME) to /usr/local/bin..."
 	@sudo cp $(BUILD_DIR)/$(BINARY_NAME) /usr/local/bin/
 	@echo "Installation complete"
 
-# 卸载
+# Uninstall
 uninstall:
 	@echo "Uninstalling $(BINARY_NAME)..."
 	@sudo rm -f /usr/local/bin/$(BINARY_NAME)

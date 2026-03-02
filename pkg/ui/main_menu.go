@@ -148,12 +148,12 @@ func (m MainMenu) View() string {
 		ci := i % len(colors)
 
 		if i == m.cursor {
-			// 选中项：高亮色名称 + > 游标
+			// Selected: highlighted name + > cursor
 			coloredName := lipgloss.NewStyle().Foreground(colors[ci]).Bold(true).Render(name)
 			line := " >  " + coloredName + "  " + desc
 			b.WriteString(SelectedScanItemStyle.Render(padRightAnsi(line, ContentWidth)))
 		} else {
-			// 非选中项：彩色名称
+			// Unselected: colored name
 			coloredName := lipgloss.NewStyle().Foreground(colors[ci]).Render(name)
 			line := "    " + coloredName + "  " + desc
 			b.WriteString(line)

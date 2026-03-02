@@ -894,8 +894,59 @@ func AnalyzeSystemStorage() map[string]int64 {
 }
 
 func parseSize(output string) int64 {
-	// Simplified handling, actual implementation needs to parse du output
-	return 0
+	lines := strings.Split(strings.TrimSpace(output), "\n")
+	if len(lines) == 0 {
+		return 0
+	}
+	// du output format: "SIZE\tPATH" (e.g. "4.2G\t/Users/x/Library")
+	fields := strings.Fields(lines[len(lines)-1])
+	if len(fields) == 0 {
+		return 0
+	}
+	sizeStr := fields[0]
+	if len(sizeStr) == 0 {
+		return 0
+	}
+
+	// Parse numeric part
+	multiplier := int64(1)
+	last := sizeStr[len(sizeStr)-1]
+	switch last {
+	case 'K', 'k':
+		multiplier = 1024
+		sizeStr = sizeStr[:len(sizeStr)-1]
+	case 'M', 'm':
+		multiplier = 1024 * 1024
+		sizeStr = sizeStr[:len(sizeStr)-1]
+	case 'G', 'g':
+		multiplier = 1024 * 1024 * 1024
+		sizeStr = sizeStr[:len(sizeStr)-1]
+	case 'T', 't':
+		multiplier = 1024 * 1024 * 1024 * 1024
+		sizeStr = sizeStr[:len(sizeStr)-1]
+	case 'B', 'b':
+		// Could be "4.2GB" format
+		if len(sizeStr) >= 2 {
+			prev := sizeStr[len(sizeStr)-2]
+			switch prev {
+			case 'K', 'k':
+				multiplier = 1024
+			case 'M', 'm':
+				multiplier = 1024 * 1024
+			case 'G', 'g':
+				multiplier = 1024 * 1024 * 1024
+			case 'T', 't':
+				multiplier = 1024 * 1024 * 1024 * 1024
+			}
+			sizeStr = sizeStr[:len(sizeStr)-2]
+		}
+	}
+
+	val, err := strconv.ParseFloat(sizeStr, 64)
+	if err != nil {
+		return 0
+	}
+	return int64(val * float64(multiplier))
 }
 
 // DetailEntry represents a single entry in a detail view (file or subdirectory)

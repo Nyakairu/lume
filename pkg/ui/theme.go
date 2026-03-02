@@ -11,30 +11,30 @@ import (
 	"github.com/Tyooughtul/lume/pkg/scanner"
 )
 
-// Theme 定义一套完整的颜色主题
+// Theme defines a complete color theme
 type Theme struct {
 	Name        string `json:"name"`
 	Description string `json:"description"`
 
-	// 核心颜色
-	Primary   string `json:"primary"`   // 主色调（标题、选中项）
-	Secondary string `json:"secondary"` // 次要色（成功、空闲状态）
-	Accent    string `json:"accent"`    // 强调色（特殊高亮）
-	Danger    string `json:"danger"`    // 危险/警告
-	Warning   string `json:"warning"`   // 警告/注意
-	Success   string `json:"success"`   // 成功/完成
+	// Core colors
+	Primary   string `json:"primary"`   // primary (titles, selected items)
+	Secondary string `json:"secondary"` // secondary (success, idle state)
+	Accent    string `json:"accent"`    // accent (special highlights)
+	Danger    string `json:"danger"`    // danger / alert
+	Warning   string `json:"warning"`   // warning / attention
+	Success   string `json:"success"`   // success / complete
 
-	// 中性色
-	Background string `json:"background"` // 背景（如使用）
-	Foreground string `json:"foreground"` // 前景/文字
-	Gray       string `json:"gray"`       // 中等灰
-	LightGray  string `json:"light_gray"` // 浅灰（次要文字）
-	Dim        string `json:"dim"`        // 暗灰（分隔线）
+	// Neutral colors
+	Background string `json:"background"` // background
+	Foreground string `json:"foreground"` // foreground / text
+	Gray       string `json:"gray"`       // medium gray
+	LightGray  string `json:"light_gray"` // light gray (secondary text)
+	Dim        string `json:"dim"`        // dim gray (dividers)
 
-	// 交互状态
-	SelectedBg string `json:"selected_bg"` // 选中背景
-	SelectedFg string `json:"selected_fg"` // 选中前景
-	Border     string `json:"border"`      // 边框颜色
+	// Interactive states
+	SelectedBg string `json:"selected_bg"` // selected background
+	SelectedFg string `json:"selected_fg"` // selected foreground
+	Border     string `json:"border"`      // border color
 }
 
 // Lipgloss colors
@@ -52,17 +52,17 @@ func (t *Theme) SelectedBgColor() lipgloss.Color { return lipgloss.Color(t.Selec
 func (t *Theme) SelectedFgColor() lipgloss.Color { return lipgloss.Color(t.SelectedFg) }
 func (t *Theme) BorderColor() lipgloss.Color    { return lipgloss.Color(t.Border) }
 
-// PresetThemes 内置预设主题
+// PresetThemes contains all built-in themes
 var PresetThemes = map[string]Theme{
 	"modern": {
 		Name:        "modern",
 		Description: "Modern Cyber (default)",
-		Primary:     "#00d4ff", // 霓虹青
-		Secondary:   "#00ff88", // 霓虹绿
-		Accent:      "#ff00ff", // 霓虹紫
-		Danger:      "#ff3366", // 霓虹红
-		Warning:     "#ffcc00", // 霓虹黄
-		Success:     "#00ff88", // 霓虹绿
+		Primary:     "#00d4ff", // neon cyan
+		Secondary:   "#00ff88", // neon green
+		Accent:      "#ff00ff", // neon purple
+		Danger:      "#ff3366", // neon red
+		Warning:     "#ffcc00", // neon yellow
+		Success:     "#00ff88", // neon green
 		Foreground:  "#ffffff",
 		Gray:        "#6b7280",
 		LightGray:   "#9ca3af",
@@ -74,13 +74,13 @@ var PresetThemes = map[string]Theme{
 	"retro": {
 		Name:        "retro",
 		Description: "Retro Terminal",
-		Primary:     "#33ff33", // 矩阵绿
-		Secondary:   "#00ff00", // 亮绿
-		Accent:      "#ffff00", // 琥珀黄
-		Danger:      "#ff3333", // 暗红
-		Warning:     "#ffaa00", // 琥珀
-		Success:     "#33ff33", // 矩阵绿
-		Foreground:  "#33ff33", // 矩阵绿
+		Primary:     "#33ff33", // matrix green
+		Secondary:   "#00ff00", // bright green
+		Accent:      "#ffff00", // amber yellow
+		Danger:      "#ff3333", // dark red
+		Warning:     "#ffaa00", // amber
+		Success:     "#33ff33", // matrix green
+		Foreground:  "#33ff33", // matrix green
 		Gray:        "#228822",
 		LightGray:   "#44aa44",
 		Dim:         "#115511",
@@ -91,12 +91,12 @@ var PresetThemes = map[string]Theme{
 	"amber": {
 		Name:        "amber",
 		Description: "Amber Monitor",
-		Primary:     "#ffb000", // 琥珀
-		Secondary:   "#ffcc00", // 亮琥珀
-		Accent:      "#ffdd44", // 淡琥珀
-		Danger:      "#ff6600", // 橙红
-		Warning:     "#ffaa00", // 橙琥珀
-		Success:     "#cc9900", // 深琥珀
+		Primary:     "#ffb000", // amber
+		Secondary:   "#ffcc00", // bright amber
+		Accent:      "#ffdd44", // light amber
+		Danger:      "#ff6600", // orange red
+		Warning:     "#ffaa00", // orange amber
+		Success:     "#cc9900", // dark amber
 		Foreground:  "#ffb000",
 		Gray:        "#996600",
 		LightGray:   "#cc8800",
@@ -108,12 +108,12 @@ var PresetThemes = map[string]Theme{
 	"ocean": {
 		Name:        "ocean",
 		Description: "Deep Ocean",
-		Primary:     "#4fc3f7", // 浅蓝
-		Secondary:   "#80cbc4", // 青绿
-		Accent:      "#ff80ab", // 珊瑚粉
-		Danger:      "#ef5350", // 珊瑚红
-		Warning:     "#ffca28", // 金黄
-		Success:     "#66bb6a", // 海绿
+		Primary:     "#4fc3f7", // sky blue
+		Secondary:   "#80cbc4", // teal
+		Accent:      "#ff80ab", // coral pink
+		Danger:      "#ef5350", // coral red
+		Warning:     "#ffca28", // gold
+		Success:     "#66bb6a", // sea green
 		Foreground:  "#e3f2fd",
 		Gray:        "#78909c",
 		LightGray:   "#b0bec5",
@@ -125,12 +125,12 @@ var PresetThemes = map[string]Theme{
 	"highcontrast": {
 		Name:        "highcontrast",
 		Description: "High Contrast (Accessibility)",
-		Primary:     "#ffffff", // 纯白
-		Secondary:   "#00ff00", // 纯绿
-		Accent:      "#ffff00", // 纯黄
-		Danger:      "#ff0000", // 纯红
-		Warning:     "#ffff00", // 纯黄
-		Success:     "#00ff00", // 纯绿
+		Primary:     "#ffffff", // pure white
+		Secondary:   "#00ff00", // pure green
+		Accent:      "#ffff00", // pure yellow
+		Danger:      "#ff0000", // pure red
+		Warning:     "#ffff00", // pure yellow
+		Success:     "#00ff00", // pure green
 		Foreground:  "#ffffff",
 		Gray:        "#888888",
 		LightGray:   "#cccccc",
@@ -142,12 +142,12 @@ var PresetThemes = map[string]Theme{
 	"dracula": {
 		Name:        "dracula",
 		Description: "Dracula",
-		Primary:     "#bd93f9", // 紫色
-		Secondary:   "#50fa7b", // 绿色
-		Accent:      "#ff79c6", // 粉色
-		Danger:      "#ff5555", // 红色
-		Warning:     "#f1fa8c", // 黄色
-		Success:     "#50fa7b", // 绿色
+		Primary:     "#bd93f9", // purple
+		Secondary:   "#50fa7b", // green
+		Accent:      "#ff79c6", // pink
+		Danger:      "#ff5555", // red
+		Warning:     "#f1fa8c", // yellow
+		Success:     "#50fa7b", // green
 		Foreground:  "#f8f8f2",
 		Gray:        "#6272a4",
 		LightGray:   "#8be9fd",
@@ -159,12 +159,12 @@ var PresetThemes = map[string]Theme{
 	"solarized": {
 		Name:        "solarized",
 		Description: "Solarized Dark",
-		Primary:     "#268bd2", // 蓝
-		Secondary:   "#2aa198", // 青
-		Accent:      "#d33682", // 洋红
-		Danger:      "#dc322f", // 红
-		Warning:     "#b58900", // 黄
-		Success:     "#859900", // 绿
+		Primary:     "#268bd2", // blue
+		Secondary:   "#2aa198", // cyan
+		Accent:      "#d33682", // magenta
+		Danger:      "#dc322f", // red
+		Warning:     "#b58900", // yellow
+		Success:     "#859900", // green
 		Foreground:  "#839496",
 		Gray:        "#586e75",
 		LightGray:   "#93a1a1",
@@ -176,12 +176,12 @@ var PresetThemes = map[string]Theme{
 	"monokai": {
 		Name:        "monokai",
 		Description: "Monokai",
-		Primary:     "#66d9ef", // 青
-		Secondary:   "#a6e22e", // 绿
-		Accent:      "#f92672", // 粉红
-		Danger:      "#f92672", // 红
-		Warning:     "#e6db74", // 黄
-		Success:     "#a6e22e", // 绿
+		Primary:     "#66d9ef", // cyan
+		Secondary:   "#a6e22e", // green
+		Accent:      "#f92672", // pink
+		Danger:      "#f92672", // red
+		Warning:     "#e6db74", // yellow
+		Success:     "#a6e22e", // green
 		Foreground:  "#f8f8f2",
 		Gray:        "#75715e",
 		LightGray:   "#ae81ff",
@@ -192,36 +192,36 @@ var PresetThemes = map[string]Theme{
 	},
 }
 
-// ThemeManager 管理主题配置
+// ThemeManager manages theme configuration
 type ThemeManager struct {
 	CurrentTheme Theme
 	AllThemes    map[string]Theme
 	ConfigPath   string
 }
 
-// NewThemeManager 创建主题管理器
+// NewThemeManager creates a theme manager
 func NewThemeManager() *ThemeManager {
 	tm := &ThemeManager{
 		AllThemes:  make(map[string]Theme),
 		ConfigPath: getThemeConfigPath(),
 	}
 
-	// 加载预设主题
+	// Load preset themes
 	for name, theme := range PresetThemes {
 		tm.AllThemes[name] = theme
 	}
 
-	// 加载用户自定义主题
+	// Load user custom themes
 	tm.loadUserThemes()
 
-	// 设置默认主题或使用保存的主题
+	// Set default theme or use saved theme
 	tm.CurrentTheme = tm.AllThemes["modern"]
 	tm.loadCurrentTheme()
 
 	return tm
 }
 
-// GetThemeNames 返回所有可用主题名称（排序保证切换顺序稳定）
+// GetThemeNames returns all available theme names (sorted for stable switch order)
 func (tm *ThemeManager) GetThemeNames() []string {
 	names := make([]string, 0, len(tm.AllThemes))
 	for name := range tm.AllThemes {
@@ -231,26 +231,26 @@ func (tm *ThemeManager) GetThemeNames() []string {
 	return names
 }
 
-// SetTheme 切换主题
+// SetTheme switches to the specified theme
 func (tm *ThemeManager) SetTheme(name string) error {
 	if theme, ok := tm.AllThemes[name]; ok {
 		tm.CurrentTheme = theme
 		tm.saveCurrentTheme()
-		// 更新全局颜色变量
+		// Update global color variables
 		tm.applyTheme()
 		return nil
 	}
 	return fmt.Errorf("theme '%s' not found", name)
 }
 
-// NextTheme 切换到下一个主题
+// NextTheme cycles to the next theme
 func (tm *ThemeManager) NextTheme() string {
 	names := tm.GetThemeNames()
 	if len(names) == 0 {
 		return ""
 	}
 
-	// 找到当前主题索引
+	// Find current theme index
 	currentIdx := 0
 	for i, name := range names {
 		if name == tm.CurrentTheme.Name {
@@ -259,7 +259,7 @@ func (tm *ThemeManager) NextTheme() string {
 		}
 	}
 
-	// 下一个主题
+	// Next theme
 	nextIdx := (currentIdx + 1) % len(names)
 	nextName := names[nextIdx]
 	tm.SetTheme(nextName)
@@ -281,7 +281,7 @@ func (tm *ThemeManager) applyTheme() {
 	WhiteColor = t.ForegroundColor()
 	BgSelected = t.SelectedBgColor()
 
-	// 更新样式
+	// Update styles
 	TitleStyle = TitleStyle.Foreground(PrimaryColor)
 	SubtitleStyle = SubtitleStyle.Foreground(LightGrayColor)
 	HelpStyle = HelpStyle.Foreground(GrayColor)
@@ -293,13 +293,13 @@ func (tm *ThemeManager) applyTheme() {
 	InfoBoxStyle = InfoBoxStyle.BorderForeground(GrayColor)
 	SelectedScanItemStyle = SelectedScanItemStyle.Background(BgSelected).Foreground(WhiteColor)
 
-	// 更新 Risk 样式
+	// Update risk styles
 	RiskLowStyle = RiskLowStyle.Foreground(SuccessColor)
 	RiskMediumStyle = RiskMediumStyle.Foreground(WarningColor)
 	RiskHighStyle = RiskHighStyle.Foreground(DangerColor)
 }
 
-// 配置文件路径
+// getThemeConfigPath returns the config file path
 func getThemeConfigPath() string {
 	home := scanner.GetRealHomeDir()
 	if home == "" {
@@ -308,7 +308,7 @@ func getThemeConfigPath() string {
 	return filepath.Join(home, ".config", "lume", "theme.json")
 }
 
-// 保存当前主题设置
+// saveCurrentTheme persists theme selection to disk
 func (tm *ThemeManager) saveCurrentTheme() {
 	if tm.ConfigPath == "" {
 		return
@@ -318,7 +318,7 @@ func (tm *ThemeManager) saveCurrentTheme() {
 		"current_theme": tm.CurrentTheme.Name,
 	}
 
-	// 确保目录存在
+	// Ensure directory exists
 	dir := filepath.Dir(tm.ConfigPath)
 	os.MkdirAll(dir, 0755)
 
@@ -326,7 +326,7 @@ func (tm *ThemeManager) saveCurrentTheme() {
 	os.WriteFile(tm.ConfigPath, jsonData, 0644)
 }
 
-// 加载保存的主题设置
+// loadCurrentTheme loads the saved theme setting
 func (tm *ThemeManager) loadCurrentTheme() {
 	if tm.ConfigPath == "" {
 		return
@@ -349,14 +349,14 @@ func (tm *ThemeManager) loadCurrentTheme() {
 	}
 }
 
-// 加载用户自定义主题
+// loadUserThemes loads custom themes from user config directory
 func (tm *ThemeManager) loadUserThemes() {
 	home := scanner.GetRealHomeDir()
 	if home == "" {
 		return
 	}
 
-	// 从 ~/.config/lume/themes/ 加载自定义主题
+	// Load custom themes from ~/.config/lume/themes/
 	themesDir := filepath.Join(home, ".config", "lume", "themes")
 	files, err := os.ReadDir(themesDir)
 	if err != nil {
@@ -379,8 +379,8 @@ func (tm *ThemeManager) loadUserThemes() {
 			continue
 		}
 
-		// 使用文件名作为主题名
-		name := file.Name()[:len(file.Name())-5] // 去掉 .json
+		// Use filename as theme name
+		name := file.Name()[:len(file.Name())-5] // strip .json
 		if theme.Name == "" {
 			theme.Name = name
 		}
@@ -391,7 +391,7 @@ func (tm *ThemeManager) loadUserThemes() {
 // Global theme manager instance
 var GlobalThemeManager *ThemeManager
 
-// InitThemeManager 初始化全局主题管理器
+// InitThemeManager initializes the global theme manager
 func InitThemeManager() {
 	GlobalThemeManager = NewThemeManager()
 	GlobalThemeManager.applyTheme()

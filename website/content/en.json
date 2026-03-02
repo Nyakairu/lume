@@ -1,0 +1,100 @@
+{
+    "hero": {
+        "title": "Move, don't remove.",
+        "subtitle": "A safer Mac cleaner that moves files to Trash instead of permanently deleting them.",
+        "install": "Install",
+        "learnMore": "Learn More"
+    },
+    "why": {
+        "title": "Why Lume?",
+        "lume": {
+            "1": "Always moves to macOS Trash — fully undoable",
+            "2": "If Trash fails, your file stays untouched",
+            "3": "55+ scan targets with dynamic discovery",
+            "4": "3-stage SHA-256 duplicate detection",
+            "5": "Concurrent worker pool — seconds, not minutes",
+            "6": "Free & open source"
+        },
+        "other": {
+            "1": "rm -rf — permanently deleted",
+            "2": "No safety net on failure",
+            "3": "~10–20 scan targets",
+            "4": "Single-pass hashing",
+            "5": "Sequential scanning",
+            "6": "$35+/year, closed source"
+        }
+    },
+    "install": {
+        "title": "Install",
+        "homebrew": "Homebrew (recommended)",
+        "oneliner": "One-liner",
+        "note": "That's it. No sudo make install. No fuss."
+    },
+    "features": {
+        "title": "Features",
+        "junk": {
+            "title": "System Junk",
+            "desc": "55+ scan targets covering Apple caches, IDEs, package managers, browsers, and Electron apps."
+        },
+        "duplicates": {
+            "title": "Duplicate Files",
+            "desc": "3-stage SHA-256 pipeline for zero false positives. 100 GB in ~10 seconds."
+        },
+        "zombie": {
+            "title": "Zombie Hunter",
+            "desc": "File access time heatmap. Find files untouched for over a year."
+        },
+        "uninstall": {
+            "title": "App Uninstaller",
+            "desc": "95%+ residual detection across 11 Library directories."
+        },
+        "trend": {
+            "title": "Disk Trend",
+            "desc": "90-day disk usage history. Spot the leak before you run out."
+        },
+        "large": {
+            "title": "Large Files",
+            "desc": "Streaming metadata scan — no lag even on 10 GB+ files."
+        }
+    },
+    "usage": {
+        "title": "Usage",
+        "interactive": "Interactive TUI (recommended)",
+        "diagnose": "Quick terminal report, no interaction",
+        "help": "Show help",
+        "shortcuts": {
+            "title": "Keyboard Shortcuts",
+            "navigate": "Navigate",
+            "toggle": "Toggle selection",
+            "confirm": "Confirm / Enter",
+            "all": "Select all / none",
+            "clean": "Clean selected (→ Trash)",
+            "theme": "Toggle theme",
+            "quit": "Quit"
+        }
+    },
+    "themes": {
+        "title": "Themes",
+        "desc": "Press t to cycle through built-in themes:",
+        "custom": "Create custom themes in ~/.config/lume/themes/"
+    },
+    "faq": {
+        "title": "FAQ",
+        "safe": {
+            "q": "Is it safe?",
+            "a": "Everything goes to macOS Trash. If our 3-tier strategy fails entirely, the file stays where it is. We never fall back to permanent deletion."
+        },
+        "why": {
+            "q": "Why not CleanMyMac?",
+            "a": "CleanMyMac costs $35+/yr, uses rm not Trash, is closed-source, and finds fewer developer caches. Lume is free, open-source, 100% undoable, and built for developers."
+        },
+        "sudo": {
+            "q": "Does it need sudo?",
+            "a": "No. Lume only touches user-accessible files."
+        },
+        "performance": {
+            "q": "Performance impact?",
+            "a": "< 50 MB RAM. Most scans finish in seconds. Non-blocking TUI with background goroutines."
+        }
+    }
+}

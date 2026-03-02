@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lume - Documentation</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-brand">
+            <span class="logo">✦</span>
+            <span class="brand-name">Lume</span>
+        </div>
+        <div class="nav-right">
+            <div class="lang-switcher">
+                <button class="lang-btn" id="langBtn">
+                    <span class="lang-current">🇺🇸 EN</span>
+                    <svg class="lang-arrow" width="12" height="12" viewBox="0 0 12 12">
+                        <path d="M2 4L6 8L10 4" stroke="currentColor" stroke-width="1.5" fill="none"/>
+                    </svg>
+                </button>
+                <div class="lang-dropdown" id="langDropdown">
+                    <a href="#" data-lang="en" class="lang-option active">
+                        <span class="lang-flag">🇺🇸</span>
+                        <span class="lang-name">English</span>
+                    </a>
+                    <a href="#" data-lang="zh" class="lang-option">
+                        <span class="lang-flag">🇨🇳</span>
+                        <span class="lang-name">中文</span>
+                    </a>
+                    <a href="#" data-lang="es" class="lang-option">
+                        <span class="lang-flag">🇪🇸</span>
+                        <span class="lang-name">Español</span>
+                    </a>
+                </div>
+            </div>
+            <a href="https://github.com/Tyooughtul/lume" class="github-link" target="_blank">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+                </svg>
+            </a>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title" data-i18n="hero.title">Move, don't remove.</h1>
+            <p class="hero-subtitle" data-i18n="hero.subtitle">A safer Mac cleaner that moves files to Trash instead of permanently deleting them.</p>
+            <div class="hero-badges">
+                <span class="badge">Go 1.21+</span>
+                <span class="badge">macOS 10.15+</span>
+                <span class="badge">MIT License</span>
+            </div>
+            <div class="hero-cta">
+                <a href="#install" class="btn btn-primary" data-i18n="hero.install">Install</a>
+                <a href="#features" class="btn btn-secondary" data-i18n="hero.learnMore">Learn More</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <section id="why" class="section">
+            <div class="container">
+                <h2 class="section-title" data-i18n="why.title">Why Lume?</h2>
+                <div class="comparison">
+                    <div class="comparison-card good">
+                        <h3>✅ Lume</h3>
+                        <ul>
+                            <li data-i18n="why.lume.1">Always moves to macOS Trash — fully undoable</li>
+                            <li data-i18n="why.lume.2">If Trash fails, your file stays untouched</li>
+                            <li data-i18n="why.lume.3">55+ scan targets with dynamic discovery</li>
+                            <li data-i18n="why.lume.4">3-stage SHA-256 duplicate detection</li>
+                            <li data-i18n="why.lume.5">Concurrent worker pool — seconds, not minutes</li>
+                            <li data-i18n="why.lume.6">Free & open source</li>
+                        </ul>
+                    </div>
+                    <div class="comparison-card bad">
+                        <h3>❌ Other Cleaners</h3>
+                        <ul>
+                            <li data-i18n="why.other.1"><code>rm -rf</code> — permanently deleted</li>
+                            <li data-i18n="why.other.2">No safety net on failure</li>
+                            <li data-i18n="why.other.3">~10–20 scan targets</li>
+                            <li data-i18n="why.other.4">Single-pass hashing</li>
+                            <li data-i18n="why.other.5">Sequential scanning</li>
+                            <li data-i18n="why.other.6">$35+/year, closed source</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="install" class="section section-alt">
+            <div class="container">
+                <h2 class="section-title" data-i18n="install.title">Install</h2>
+                <h3 class="install-method" data-i18n="install.homebrew">Homebrew (recommended)</h3>
+                <div class="install-code">
+                    <code>brew install Tyooughtul/tap/lume</code>
+                    <button class="copy-btn" data-clipboard="brew install Tyooughtul/tap/lume">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                        </svg>
+                    </button>
+                </div>
+                <h3 class="install-method" data-i18n="install.oneliner">One-liner</h3>
+                <div class="install-code">
+                    <code>curl -fsSL https://raw.githubusercontent.com/Tyooughtul/lume/main/install.sh | bash</code>
+                    <button class="copy-btn" data-clipboard="curl -fsSL https://raw.githubusercontent.com/Tyooughtul/lume/main/install.sh | bash">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                        </svg>
+                    </button>
+                </div>
+                <p class="install-note" data-i18n="install.note">That's it. No sudo make install. No fuss.</p>
+            </div>
+        </section>
+
+        <section id="features" class="section">
+            <div class="container">
+                <h2 class="section-title" data-i18n="features.title">Features</h2>
+                
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">🗑</div>
+                        <h3 data-i18n="features.junk.title">System Junk</h3>
+                        <p data-i18n="features.junk.desc">55+ scan targets covering Apple caches, IDEs, package managers, browsers, and Electron apps.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">🔍</div>
+                        <h3 data-i18n="features.duplicates.title">Duplicate Files</h3>
+                        <p data-i18n="features.duplicates.desc">3-stage SHA-256 pipeline for zero false positives. 100 GB in ~10 seconds.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">🧟</div>
+                        <h3 data-i18n="features.zombie.title">Zombie Hunter</h3>
+                        <p data-i18n="features.zombie.desc">File access time heatmap. Find files untouched for over a year.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">📦</div>
+                        <h3 data-i18n="features.uninstall.title">App Uninstaller</h3>
+                        <p data-i18n="features.uninstall.desc">95%+ residual detection across 11 Library directories.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">📊</div>
+                        <h3 data-i18n="features.trend.title">Disk Trend</h3>
+                        <p data-i18n="features.trend.desc">90-day disk usage history. Spot the leak before you run out.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">📁</div>
+                        <h3 data-i18n="features.large.title">Large Files</h3>
+                        <p data-i18n="features.large.desc">Streaming metadata scan — no lag even on 10 GB+ files.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="usage" class="section section-alt">
+            <div class="container">
+                <h2 class="section-title" data-i18n="usage.title">Usage</h2>
+                
+                <div class="usage-grid">
+                    <div class="usage-card">
+                        <code class="usage-cmd">lume</code>
+                        <p data-i18n="usage.interactive">Interactive TUI (recommended)</p>
+                    </div>
+                    <div class="usage-card">
+                        <code class="usage-cmd">lume -diagnose</code>
+                        <p data-i18n="usage.diagnose">Quick terminal report, no interaction</p>
+                    </div>
+                    <div class="usage-card">
+                        <code class="usage-cmd">lume -help</code>
+                        <p data-i18n="usage.help">Show help</p>
+                    </div>
+                </div>
+
+                <h3 class="subsection-title" data-i18n="usage.shortcuts.title">Keyboard Shortcuts</h3>
+                <div class="shortcuts-table">
+                    <div class="shortcut-row">
+                        <kbd>↑</kbd> <kbd>k</kbd> / <kbd>↓</kbd> <kbd>j</kbd>
+                        <span data-i18n="usage.shortcuts.navigate">Navigate</span>
+                    </div>
+                    <div class="shortcut-row">
+                        <kbd>Space</kbd>
+                        <span data-i18n="usage.shortcuts.toggle">Toggle selection</span>
+                    </div>
+                    <div class="shortcut-row">
+                        <kbd>Enter</kbd>
+                        <span data-i18n="usage.shortcuts.confirm">Confirm / Enter</span>
+                    </div>
+                    <div class="shortcut-row">
+                        <kbd>a</kbd>
+                        <span data-i18n="usage.shortcuts.all">Select all / none</span>
+                    </div>
+                    <div class="shortcut-row">
+                        <kbd>d</kbd> <kbd>c</kbd>
+                        <span data-i18n="usage.shortcuts.clean">Clean selected (→ Trash)</span>
+                    </div>
+                    <div class="shortcut-row">
+                        <kbd>t</kbd>
+                        <span data-i18n="usage.shortcuts.theme">Toggle theme</span>
+                    </div>
+                    <div class="shortcut-row">
+                        <kbd>q</kbd>
+                        <span data-i18n="usage.shortcuts.quit">Quit</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="themes" class="section">
+            <div class="container">
+                <h2 class="section-title" data-i18n="themes.title">Themes</h2>
+                <p class="section-desc" data-i18n="themes.desc">Press <kbd>t</kbd> to cycle through built-in themes:</p>
+                
+                <div class="themes-grid">
+                    <div class="theme-tag">modern</div>
+                    <div class="theme-tag">retro</div>
+                    <div class="theme-tag">amber</div>
+                    <div class="theme-tag">ocean</div>
+                    <div class="theme-tag">highcontrast</div>
+                    <div class="theme-tag">dracula</div>
+                    <div class="theme-tag">solarized</div>
+                    <div class="theme-tag">monokai</div>
+                </div>
+                
+                <p class="section-desc" data-i18n="themes.custom">Create custom themes in <code>~/.config/lume/themes/</code></p>
+            </div>
+        </section>
+
+        <section id="faq" class="section section-alt">
+            <div class="container">
+                <h2 class="section-title" data-i18n="faq.title">FAQ</h2>
+                
+                <div class="faq-list">
+                    <details class="faq-item">
+                        <summary data-i18n="faq.safe.q">Is it safe?</summary>
+                        <p data-i18n="faq.safe.a">Everything goes to macOS Trash. If our 3-tier strategy fails entirely, the file stays where it is. We never fall back to permanent deletion.</p>
+                    </details>
+                    
+                    <details class="faq-item">
+                        <summary data-i18n="faq.why.q">Why not CleanMyMac?</summary>
+                        <p data-i18n="faq.why.a">CleanMyMac costs $35+/yr, uses rm not Trash, is closed-source, and finds fewer developer caches. Lume is free, open-source, 100% undoable, and built for developers.</p>
+                    </details>
+                    
+                    <details class="faq-item">
+                        <summary data-i18n="faq.sudo.q">Does it need sudo?</summary>
+                        <p data-i18n="faq.sudo.a">No. Lume only touches user-accessible files.</p>
+                    </details>
+                    
+                    <details class="faq-item">
+                        <summary data-i18n="faq.performance.q">Performance impact?</summary>
+                        <p data-i18n="faq.performance.a">< 50 MB RAM. Most scans finish in seconds. Non-blocking TUI with background goroutines.</p>
+                    </details>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>Released under MIT License · Made with care for your Mac</p>
+            <p class="footer-links">
+                <a href="https://github.com/Tyooughtul/lume" target="_blank">GitHub</a>
+                <span class="divider">·</span>
+                <a href="https://github.com/Tyooughtul/lume/issues" target="_blank">Issues</a>
+                <span class="divider">·</span>
+                <a href="https://github.com/Tyooughtul/lume/blob/main/LICENSE" target="_blank">License</a>
+            </p>
+        </div>
+    </footer>
+
+    <script src="js/i18n.js"></script>
+</body>
+</html>

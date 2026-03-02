@@ -19,8 +19,8 @@ type App struct {
 	diskTrend      *DiskTrend
 	width          int
 	height         int
-	themeNotif     string // 主题切换通知
-	themeNotifTick int    // 通知显示计数
+	themeNotif     string // theme switch notification
+	themeNotifTick int    // notification display counter
 }
 
 // NewApp creates the main application
@@ -43,10 +43,10 @@ func (a App) Init() tea.Cmd {
 	return a.mainMenu.Init()
 }
 
-// ThemeChangedMsg 主题切换消息
+// ThemeChangedMsg is sent when the theme changes
 type ThemeChangedMsg struct{}
 
-// tickMsg 用于通知计时器
+// tickMsg is used for the notification timer
 type tickMsg struct{}
 
 // Update handles state updates
@@ -72,12 +72,12 @@ func (a *App) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 		a.diskTrend.height = msg.Height
 
 	case tea.KeyMsg:
-		// 全局快捷键：t 切换主题
+		// Global hotkey: t to switch theme
 		if msg.String() == "t" && a.currentView == ViewMainMenu && GlobalThemeManager != nil {
 			nextTheme := GlobalThemeManager.NextTheme()
 			if nextTheme != "" {
 				a.themeNotif = GlobalThemeManager.CurrentTheme.Description
-				a.themeNotifTick = 40 // 显示约 2 秒
+				a.themeNotifTick = 40 // display for ~2 seconds
 				a.mainMenu.ThemeNotif = a.themeNotif
 				return a, tickCmd()
 			}
@@ -178,7 +178,7 @@ func (a *App) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 	return a, nil
 }
 
-// tickCmd 创建定时器命令（50ms 间隔）
+// tickCmd creates a timer command (50ms interval)
 func tickCmd() tea.Cmd {
 	return tea.Tick(50*time.Millisecond, func(t time.Time) tea.Msg {
 		return tickMsg{}

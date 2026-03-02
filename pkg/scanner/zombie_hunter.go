@@ -45,15 +45,15 @@ func (r AccessTimeRange) String() string {
 func (r AccessTimeRange) Color() string {
 	switch r {
 	case RangeRecent7d:
-		return "#ff4757" // 红色 - 热
+		return "#ff4757" // red - hot
 	case RangeRecent30d:
-		return "#ffa502" // 橙色
+		return "#ffa502" // orange
 	case RangeRecent90d:
-		return "#ffd700" // 金色
+		return "#ffd700" // gold
 	case RangeRecent1y:
-		return "#2ed573" // 绿色
+		return "#2ed573" // green
 	case RangeZombie:
-		return "#747d8c" // 灰色 - 僵尸
+		return "#747d8c" // gray - zombie
 	default:
 		return "#ffffff"
 	}
@@ -94,7 +94,7 @@ func NewZombieHunterScanner(rootPath string) *ZombieHunterScanner {
 	}
 	return &ZombieHunterScanner{
 		rootPath: rootPath,
-		minSize:  10 * 1024 * 1024, // 默认 10MB
+		minSize:  10 * 1024 * 1024, // default 10MB
 		stats:    make(map[AccessTimeRange]*ZombieHunterStats),
 	}
 }
@@ -230,7 +230,7 @@ func (s *ZombieHunterScanner) categorizeFiles(files []string, progressCh chan<- 
 	for i, f := range files {
 		jobs <- job{path: f, idx: i}
 		if progressCh != nil && i%100 == 0 {
-			progressCh <- fmt.Sprintf("分析中... %d/%d", i, len(files))
+			progressCh <- fmt.Sprintf("Analyzing... %d/%d", i, len(files))
 		}
 	}
 	close(jobs)

@@ -1,0 +1,100 @@
+{
+    "hero": {
+        "title": "Mueve, no elimines.",
+        "subtitle": "Un limpiador de Mac más seguro que mueve archivos a la Papelera en lugar de eliminarlos permanentemente.",
+        "install": "Instalar",
+        "learnMore": "Saber Más"
+    },
+    "why": {
+        "title": "¿Por qué Lume?",
+        "lume": {
+            "1": "Siempre mueve a la Papelera de macOS — completamente reversible",
+            "2": "Si la Papelera falla, tu archivo permanece intacto",
+            "3": "55+ objetivos de escaneo con descubrimiento dinámico",
+            "4": "Detección de duplicados SHA-256 en 3 etapas",
+            "5": "Pool de trabajadores concurrentes — segundos, no minutos",
+            "6": "Gratuito y de código abierto"
+        },
+        "other": {
+            "1": "rm -rf — eliminación permanente",
+            "2": "Sin red de seguridad en caso de fallo",
+            "3": "~10–20 objetivos de escaneo",
+            "4": "Hash de una sola pasada",
+            "5": "Escaneo secuencial",
+            "6": "$35+/año, código cerrado"
+        }
+    },
+    "install": {
+        "title": "Instalación",
+        "homebrew": "Homebrew (recomendado)",
+        "oneliner": "Instalación rápida",
+        "note": "Eso es todo. Sin sudo. Sin complicaciones."
+    },
+    "features": {
+        "title": "Características",
+        "junk": {
+            "title": "Basura del Sistema",
+            "desc": "55+ objetivos de escaneo que cubren cachés de Apple, IDEs, gestores de paquetes, navegadores y apps Electron."
+        },
+        "duplicates": {
+            "title": "Archivos Duplicados",
+            "desc": "Pipeline SHA-256 de 3 etapas con cero falsos positivos. 100 GB en ~10 segundos."
+        },
+        "zombie": {
+            "title": "Cazador de Zombies",
+            "desc": "Mapa de calor de tiempo de acceso de archivos. Encuentra archivos sin tocar por más de un año."
+        },
+        "uninstall": {
+            "title": "Desinstalador de Apps",
+            "desc": "Detección del 95%+ de residuos en 11 directorios Library."
+        },
+        "trend": {
+            "title": "Tendencia de Disco",
+            "desc": "Historial de uso de disco de 90 días. Detecta la fuga antes de quedarte sin espacio."
+        },
+        "large": {
+            "title": "Archivos Grandes",
+            "desc": "Escaneo de metadatos en streaming — sin retraso incluso en archivos de 10 GB+."
+        }
+    },
+    "usage": {
+        "title": "Uso",
+        "interactive": "TUI Interactivo (recomendado)",
+        "diagnose": "Informe rápido de terminal, sin interacción",
+        "help": "Mostrar ayuda",
+        "shortcuts": {
+            "title": "Atajos de Teclado",
+            "navigate": "Navegar",
+            "toggle": "Alternar selección",
+            "confirm": "Confirmar / Entrar",
+            "all": "Seleccionar todo / ninguno",
+            "clean": "Limpiar seleccionados (→ Papelera)",
+            "theme": "Cambiar tema",
+            "quit": "Salir"
+        }
+    },
+    "themes": {
+        "title": "Temas",
+        "desc": "Presiona t para cambiar entre temas integrados:",
+        "custom": "Crea temas personalizados en ~/.config/lume/themes/"
+    },
+    "faq": {
+        "title": "Preguntas Frecuentes",
+        "safe": {
+            "q": "¿Es seguro?",
+            "a": "Todo va a la Papelera de macOS. Si nuestra estrategia de 3 niveles falla completamente, el archivo permanece donde está. Nunca recurrimos a la eliminación permanente."
+        },
+        "why": {
+            "q": "¿Por qué no CleanMyMac?",
+            "a": "CleanMyMac cuesta $35+/año, usa rm en lugar de la Papelera, es de código cerrado y encuentra menos cachés de desarrolladores. Lume es gratuito, de código abierto, 100% reversible y diseñado para desarrolladores."
+        },
+        "sudo": {
+            "q": "¿Necesita sudo?",
+            "a": "No. Lume solo toca archivos accesibles por el usuario."
+        },
+        "performance": {
+            "q": "¿Impacto en el rendimiento?",
+            "a": "< 50 MB de RAM. La mayoría de escaneos terminan en segundos. TUI no bloqueante con goroutines en segundo plano."
+        }
+    }
+}

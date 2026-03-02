@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"os/exec"
 	"path/filepath"
+	"sort"
 	"strconv"
 	"strings"
 
@@ -105,13 +106,9 @@ func (m *LargeFilesView) scanWithFind() []scanner.FileInfo {
 		})
 	}
 
-	for i := 0; i < len(results); i++ {
-		for j := i + 1; j < len(results); j++ {
-			if results[i].Size < results[j].Size {
-				results[i], results[j] = results[j], results[i]
-			}
-		}
-	}
+	sort.Slice(results, func(i, j int) bool {
+		return results[i].Size > results[j].Size
+	})
 
 	return results
 }

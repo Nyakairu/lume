@@ -9,18 +9,18 @@ REPO="Tyooughtul/lume"
 BINARY_NAME="lume"
 INSTALL_DIR="/usr/local/bin"
 
-# 颜色
+# Colors
 GREEN='\033[0;32m'
 RED='\033[0;31m'
 NC='\033[0m'
 
-# 清理临时文件
+# Clean up temporary files
 cleanup() {
     rm -f "$TMP_FILE" 2>/dev/null
 }
 trap cleanup EXIT
 
-# 检测架构
+# Detect architecture
 detect_arch() {
     local arch=$(uname -m)
     case "$arch" in
@@ -30,7 +30,7 @@ detect_arch() {
     esac
 }
 
-# 检测最新版本
+# Detect latest version
 get_latest_version() {
     curl -s "https://api.github.com/repos/$REPO/releases/latest" |
         grep '"tag_name":' |
@@ -42,7 +42,7 @@ main() {
     echo "[*] Installing Lume..."
     echo ""
 
-    # 检测操作系统
+    # Detect operating system
     if [ "$(uname -s)" != "Darwin" ]; then
         echo -e "${RED}[X] Lume only supports macOS${NC}"
         exit 1

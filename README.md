@@ -26,11 +26,17 @@
 
 ## Install
 
+### Homebrew (recommended)
+
+```bash
+brew install Tyooughtul/tap/lume
+```
+
+### One-liner
+
 ```bash
 curl -fsSL https://raw.githubusercontent.com/Tyooughtul/lume/main/install.sh | bash
 ```
-
-No Homebrew tap. No `sudo make install`. No fuss.
 
 ---
 
